@@ -169,3 +169,49 @@ body {
     border-bottom: 1px solid var(--glass-border);
     background: rgba(255,255,255,0.02);
 }
+
+
+
+
+    /* --- THE FLEX: HOVER PREPARATION --- */
+
+/* 1. Set the card container to relative so particles can "emerge" from it */
+.tilt-element {
+    position: relative;
+    z-index: 10;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* 2. Style the particles on the main canvas (defined in particles.js) */
+#particle-canvas {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    z-index: -1; /* Keep behind cards */
+    pointer-events: none; /* Let clicks pass through to cards */
+}
+
+/* 3. Give the card a glowing background effect *only* on hover */
+.tilt-element::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: radial-gradient(
+        400px circle at var(--mouse-x, 50%) var(--mouse-y, 50%), 
+        rgba(255, 255, 255, 0.04), 
+        transparent 40%
+    );
+    z-index: -1; /* Below content, above particles */
+    opacity: 0;
+    transition: opacity 0.4s ease;
+}
+
+.tilt-element:hover::before {
+    opacity: 1;
+}
+
+/* 4. The "Unique Glow" you asked for: keep it minimal */
+.tilt-element:hover {
+    box-shadow: 0 0 30px rgba(255, 255, 255, 0.03);
+        }
