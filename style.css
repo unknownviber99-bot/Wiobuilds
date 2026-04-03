@@ -131,3 +131,41 @@ body {
     background: rgba(255, 255, 255, 0.08);
     transform: translateY(-10px);
       }
+
+/* Fix the Loader so it covers everything */
+.system-loader {
+    position: fixed;
+    inset: 0;
+    background: #050505;
+    z-index: 9999; /* Higher than Nav */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 0.8s ease;
+}
+
+/* Fix Hero Spacing so it's centered */
+.hero-flex {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-top: 80px; /* Space for the floating nav */
+}
+
+/* Canvas needs to stay in background */
+#particle-canvas {
+    position: fixed;
+    top: 0; left: 0;
+    z-index: -1;
+}
+
+/* Tech Ribbon Spacing */
+.tech-ribbon {
+    overflow: hidden;
+    padding: 20px 0;
+    border-top: 1px solid var(--glass-border);
+    border-bottom: 1px solid var(--glass-border);
+    background: rgba(255,255,255,0.02);
+}
