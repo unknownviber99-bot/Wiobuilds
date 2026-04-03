@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+ <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -8,52 +8,86 @@
 </head>
 <body>
 
+    <div id="loader" class="system-loader">
+        <div class="loader-content">
+            <span class="loader-text">INITIALIZING_CORE...</span>
+            <div class="loader-bar"><div class="progress"></div></div>
+        </div>
+    </div>
+
     <canvas id="particle-canvas"></canvas>
 
-    <nav class="system-nav">
-        <div class="logo">WIOBUILDS</div>
-        <div class="status-indicator">
-            <span class="pulse-dot"></span> SYSTEM_ONLINE
+    <header class="edge-header">
+        <div class="nav-container">
+            <div class="logo">WIOBUILDS</div>
+            <nav class="magnetic-nav">
+                <a href="#showcase">SHOWCASE</a>
+                <a href="#tiers">PRICING</a>
+                <div class="status-chip">
+                    <span class="pulse"></span> ACCEPTING_PROJECTS
+                </div>
+            </nav>
         </div>
-    </nav>
+    </header>
 
     <main>
-        <section class="hero-section">
-            <div class="hero-content">
-                <h1 class="hero-title">WE BUILD <span class="accent">WEBSITES</span><br>THAT WORK.</h1>
-                <p class="hero-sub">High-performance digital architecture with a cinematic edge. Engineered to convert, built to scale.</p>
-                
-                <div class="cta-group">
-                    <a href="#" class="btn-primary">INITIALIZE BOOKING</a>
-                    <a href="#showcase" class="btn-secondary">VIEW CORE_WORK</a>
+        <section class="hero-flex">
+            <h1 class="glitch-title" data-text="WE BUILD WEBSITES THAT WORK">
+                WE BUILD <span class="silver-glow">WEBSITES</span><br>THAT WORK.
+            </h1>
+            <p class="hero-sub">High-performance digital architecture with a cinematic edge.</p>
+            <div class="cta-wrap">
+                <a href="#tiers" class="btn-primary">INITIALIZE_BOOKING</a>
+            </div>
+        </section>
+
+        <div class="tech-ribbon">
+            <div class="marquee-track">
+                <span>GITHUB // </span><span>REACT // </span><span>NODE.JS // </span>
+                <span>AWS // </span><span>VERCEL // </span><span>DOCKER // </span>
+                </div>
+        </div>
+
+        <section id="tiers" class="tier-section">
+            <h2 class="section-label">SELECT_BLUEPRINT</h2>
+            <div class="tier-grid">
+                <div class="tier-card glass-card tilt-element" data-tier="core">
+                    <h3>CORE</h3>
+                    <p>Single-page cinematic experience.</p>
+                    <span class="price">FROM $1.5k</span>
+                </div>
+                <div class="tier-card glass-card tilt-element active" data-tier="pro">
+                    <h3>PRO</h3>
+                    <p>Multi-page edge-optimized system.</p>
+                    <span class="price">FROM $3.5k</span>
+                </div>
+                <div class="tier-card glass-card tilt-element" data-tier="ultra">
+                    <h3>ULTRA</h3>
+                    <p>Custom software & branding ecosystem.</p>
+                    <span class="price">CONTACT</span>
                 </div>
             </div>
         </section>
 
-        <section class="booking-preview">
-            <div class="glass-display">
-                <div class="display-header">
-                    <span>BOOKING_INTERFACE_v1.0</span>
-                    <div class="dots"><span></span><span></span><span></span></div>
-                </div>
-                <div class="display-body">
-                    <div class="step">
-                        <span class="step-num">01</span>
-                        <p>Select your digital blueprint.</p>
-                    </div>
-                    <div class="step active">
-                        <span class="step-num">02</span>
-                        <p>Initialize project parameters.</p>
-                    </div>
-                    <div class="step">
-                        <span class="step-num">03</span>
-                        <p>Deploy to the global edge.</p>
+        <section id="showcase" class="work-section">
+            <h2 class="section-label">CORE_WORK</h2>
+            <div class="work-grid">
+                <div class="work-card glass-card tilt-element">
+                    <div class="preview-overlay">VIEW_STATS</div>
+                    <div class="work-info">
+                        <h4>PROJECT_01</h4>
+                        <span>PERFORMANCE: 99/100</span>
                     </div>
                 </div>
             </div>
         </section>
     </main>
 
-    <script src="script.js"></script>
+    <div class="system-status-widget">
+        <div class="time-utc">UTC: <span id="clock">--:--:--</span></div>
+        <div class="loc">LOC: 40.7128° N</div>
+    </div>
+
+    <script src="script.js" defer></script>
 </body>
-  </html>
+    </html>
