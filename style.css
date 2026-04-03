@@ -320,3 +320,105 @@ body {
         display: none;
     }
         }
+/* ================================
+   🔧 SYSTEM LAYOUT FIX
+================================ */
+
+/* Layout with sidebar */
+body {
+    display: flex;
+}
+
+/* Main content wrapper */
+main {
+    margin-left: 200px; /* match sidebar width */
+    width: 100%;
+}
+
+/* Fix section spacing */
+section {
+    padding: 120px 6vw;
+}
+
+/* Container consistency */
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+/* ================================
+   🔧 HERO FIX
+================================ */
+.hero-flex {
+    min-height: 100vh;
+    justify-content: center;
+    gap: 25px;
+}
+
+/* ================================
+   🔧 BUTTON IMPROVEMENT
+================================ */
+.btn-primary {
+    background: white;
+    color: black;
+    box-shadow: 0 10px 30px rgba(255,255,255,0.1);
+}
+
+.btn-primary:hover {
+    transform: translateY(-3px) scale(1.02);
+}
+
+/* ================================
+   🔧 CARD DEPTH FIX
+================================ */
+.glass-card {
+    background: linear-gradient(
+        145deg,
+        rgba(255,255,255,0.08),
+        rgba(255,255,255,0.02)
+    );
+    border: 1px solid rgba(255,255,255,0.15);
+}
+
+/* ================================
+   🔧 SIDEBAR FIX
+================================ */
+.system-sidebar {
+    width: 200px;
+    z-index: 1001;
+}
+
+/* Prevent overlap on small screens */
+@media (max-width: 900px) {
+    main {
+        margin-left: 0;
+    }
+
+    .system-sidebar {
+        display: none;
+    }
+}
+
+/* ================================
+   🔧 TYPOGRAPHY HIERARCHY
+================================ */
+.section-label {
+    font-size: 0.75rem;
+    letter-spacing: 3px;
+    opacity: 0.6;
+    margin-bottom: 40px;
+}
+
+/* ================================
+   🔧 AUTH FIX
+================================ */
+.auth-box input:focus {
+    border-color: white;
+}
+
+/* ================================
+   🔧 SMOOTH FEEL
+================================ */
+* {
+    transition: background 0.3s, transform 0.3s, opacity 0.3s;
+}
