@@ -1,4 +1,4 @@
- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -8,116 +8,161 @@
 </head>
 <body>
 
-    <div id="loader" class="system-loader">
-        <div class="loader-content">
-            <span class="loader-text">INITIALIZING_CORE...</span>
-            <div class="loader-bar"><div class="progress"></div></div>
-        </div>
+<!-- ================= LOADER ================= -->
+<div id="loader" class="system-loader">
+    <div class="loader-content">
+        <span class="loader-text">INITIALIZING_CORE...</span>
+        <div class="loader-bar"><div class="progress"></div></div>
     </div>
+</div>
 
-    <canvas id="particle-canvas"></canvas>
+<canvas id="particle-canvas"></canvas>
 
-    <header class="edge-header">
-        <div class="nav-container">
-            <div class="logo">WIOBUILDS</div>
-            <nav class="magnetic-nav">
-                <a href="#showcase">SHOWCASE</a>
-                <a href="#tiers">PRICING</a>
-                <div class="status-chip">
-                    <span class="pulse"></span> ACCEPTING_PROJECTS
-                </div>
-            </nav>
-        </div>
-    </header>
+<!-- ================= HEADER ================= -->
+<header class="edge-header">
+    <div class="nav-container">
+        <div class="logo">WIOBUILDS</div>
 
-    <main>
-        <section class="hero-flex">
-            <h1 class="glitch-title" data-text="WE BUILD WEBSITES THAT WORK">
-                WE BUILD <span class="silver-glow">WEBSITES</span><br>THAT WORK.
-            </h1>
-            <p class="hero-sub">High-performance digital architecture with a cinematic edge.</p>
-            <div class="cta-wrap">
-                <a href="#tiers" class="btn-primary">INITIALIZE_BOOKING</a>
+        <nav class="magnetic-nav">
+            <a href="#showcase">SHOWCASE</a>
+            <a href="#tiers">PRICING</a>
+            <a href="#auth" class="auth-link">LOGIN</a>
+
+            <div class="status-chip">
+                <span class="pulse"></span> ACCEPTING_PROJECTS
             </div>
-        </section>
-       <section id="tiers" class="booking-preview container">
-            <h2 class="section-label reveal-on-scroll">SELECT_BLUEPRINT</h2>
-            
-            <div class="glass-display tilt-element reveal-on-scroll">
-                <div class="display-header">
-                    <span>BOOKING_INTERFACE_v1.0</span>
-                    <div class="dots"><span></span><span></span><span></span></div>
-                </div>
-                <div class="display-body">
-                    </div>
-            </div>
-        </section>
+        </nav>
+    </div>
+</header>
 
-        <section id="showcase" class="work-showcase container">
-            <h2 class="section-label reveal-on-scroll">CORE_WORK</h2>
-            <div class="work-grid reveal-on-scroll">
-                <div class="work-card tilt-element">
-                    <h4>PROJECT_01</h4>
-                    <span class="view-core">VIEW_CORE</span>
-                </div>
-                <div class="work-card tilt-element">
-                    <h4>PROJECT_02</h4>
-                    <span class="view-core">VIEW_CORE</span>
-                </div>
-            </div>
-        </section>
+<!-- ================= MAIN ================= -->
+<main>
 
-     
+<!-- HERO -->
+<section class="hero-flex">
+    <h1 class="glitch-title" data-text="WE BUILD WEBSITES THAT WORK">
+        WE BUILD <span class="silver-glow">WEBSITES</span><br>THAT WORK.
+    </h1>
+    <p class="hero-sub">High-performance digital architecture with a cinematic edge.</p>
 
-        <div class="tech-ribbon">
-            <div class="marquee-track">
-                <span>GITHUB // </span><span>REACT // </span><span>NODE.JS // </span>
-                <span>AWS // </span><span>VERCEL // </span><span>DOCKER // </span>
-                </div>
+    <div class="cta-wrap">
+        <a href="#tiers" class="btn-primary">INITIALIZE_BOOKING</a>
+        <a href="#auth" class="btn-secondary">ACCESS_SYSTEM</a>
+    </div>
+</section>
+
+<!-- ================= BOOKING INTERFACE ================= -->
+<section id="tiers" class="booking-preview container">
+    <h2 class="section-label reveal-on-scroll">SELECT_BLUEPRINT</h2>
+
+    <div class="glass-display tilt-element reveal-on-scroll">
+        <div class="display-header">
+            <span>BOOKING_INTERFACE_v1.0</span>
+            <div class="dots"><span></span><span></span><span></span></div>
         </div>
 
-        <section id="tiers" class="tier-section">
-            <h2 class="section-label">SELECT_BLUEPRINT</h2>
+        <div class="display-body">
+
             <div class="tier-grid">
-                <div class="tier-card glass-card tilt-element" data-tier="core">
+
+                <div class="tier-card glass-card" data-tier="core">
                     <h3>CORE</h3>
                     <p>Single-page cinematic experience.</p>
                     <span class="price">FROM $1.5k</span>
                 </div>
-                <div class="tier-card glass-card tilt-element active" data-tier="pro">
+
+                <div class="tier-card glass-card active" data-tier="pro">
                     <h3>PRO</h3>
                     <p>Multi-page edge-optimized system.</p>
                     <span class="price">FROM $3.5k</span>
                 </div>
-                <div class="tier-card glass-card tilt-element" data-tier="ultra">
+
+                <div class="tier-card glass-card" data-tier="ultra">
                     <h3>ULTRA</h3>
-                    <p>Custom software & branding ecosystem.</p>
+                    <p>Custom software ecosystem.</p>
                     <span class="price">CONTACT</span>
                 </div>
-            </div>
-        </section>
 
-        <section id="showcase" class="work-section">
-            <h2 class="section-label">CORE_WORK</h2>
-            <div class="work-grid">
-                <div class="work-card glass-card tilt-element">
-                    <div class="preview-overlay">VIEW_STATS</div>
-                    <div class="work-info">
-                        <h4>PROJECT_01</h4>
-                        <span>PERFORMANCE: 99/100</span>
-                    </div>
-                </div>
             </div>
-        </section>
-    </main>
 
-    <div class="system-status-widget">
-        <div class="time-utc">UTC: <span id="clock">--:--:--</span></div>
-        <div class="loc">LOC: 40.7128° N</div>
+            <button class="btn-primary full-width">CONFIRM_SELECTION</button>
+
+        </div>
     </div>
+</section>
 
-   
- <script src="script.js"></script>
+<!-- ================= SHOWCASE ================= -->
+<section id="showcase" class="work-showcase container">
+    <h2 class="section-label reveal-on-scroll">CORE_WORK</h2>
+
+    <div class="work-grid reveal-on-scroll">
+
+        <div class="work-card glass-card tilt-element">
+            <div class="preview-overlay">VIEW_STATS</div>
+            <div class="work-info">
+                <h4>PROJECT_01</h4>
+                <span>PERFORMANCE: 99/100</span>
+            </div>
+        </div>
+
+        <div class="work-card glass-card tilt-element">
+            <div class="preview-overlay">VIEW_STATS</div>
+            <div class="work-info">
+                <h4>PROJECT_02</h4>
+                <span>PERFORMANCE: 97/100</span>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<!-- ================= AUTH SYSTEM ================= -->
+<section id="auth" class="auth-section container">
+    <h2 class="section-label">SYSTEM_ACCESS</h2>
+
+    <div class="auth-box glass-card">
+
+        <input type="text" placeholder="USERNAME">
+        <input type="password" placeholder="PASSWORD">
+
+        <button class="btn-primary full-width">LOGIN</button>
+
+        <p class="switch-auth">NO ACCOUNT? <span>SIGN UP</span></p>
+    </div>
+</section>
+
+</main>
+
+<!-- ================= LEFT SYSTEM PANEL ================= -->
+<div class="system-sidebar">
+
+    <div class="sidebar-header">CORE_PANEL</div>
+
+    <ul class="sidebar-menu">
+        <li class="active">DASHBOARD</li>
+        <li>PROJECTS</li>
+        <li>TASKS</li>
+        <li>SETTINGS</li>
+    </ul>
+
+</div>
+
+<!-- ================= TECH RIBBON ================= -->
+<div class="tech-ribbon">
+    <div class="marquee-track">
+        <span>GITHUB //</span><span>REACT //</span><span>NODE //</span>
+        <span>AWS //</span><span>VERCEL //</span><span>DOCKER //</span>
+    </div>
+</div>
+
+<!-- ================= STATUS ================= -->
+<div class="system-status-widget">
+    <div class="time-utc">UTC: <span id="clock">--:--:--</span></div>
+    <div class="loc">LOC: SYSTEM_ACTIVE</div>
+</div>
+
+<script src="script.js"></script>
+
 </body>
-</html>
+									</html>
 
