@@ -82,3 +82,96 @@ function animate() {
 }
 init();
 animate();
+
+
+
+/**
+ * WIOBUILDS // Special Interaction Engine
+ * Features: 3D Tilt, Particle Emitter on Hover
+ */
+
+const cards = document.querySelectorAll('.tilt-element');
+
+// 1. DYNAMIC PARTICLE EMITTER (This creates the unique float-up effect)
+let emitterParticles = [];
+
+cards.forEach(card => {
+    card.addEventListener('mousemove', (e) => {
+        const rect = card.getBoundingClientRect();
+        
+        // Update CSS variables for the background glow (as used in style.css)
+        const mouseX = e.clientX - rect.left;
+        const mouseY = e.clientY - rect.top;
+        card.style.setProperty('--mouse-x', `${(mouseX / rect.width) * 100}%`);
+        card.style.setProperty('--mouse-y', `${(mouseY / rect.height) * 100}%`);
+
+        // Emit new "Float Up" particles from the cursor position
+        if (Math.random() < 0.1) { // Control the emission rate (10% chance per frame)
+            emitterParticles.push({
+                x: e.clientX,
+                y: e.clientY,
+                speedX: (Math.random() - 0.5) * 1, // Slight horizontal drift
+                speedY: -(Math.random() * 2 + 1), // Force particles UP
+                size: Math.random() * 1.5 + 0.5,
+                opacity: 1,
+                life: 100 // How many frames before it fades
+            });
+        }
+    });
+});
+
+// 2. TILT EFFECT (Preparation for GPU acceleration)
+cards.forEach(card => {
+    card.addEventListener('mousemove', (e) => {
+        const rect = card.getBoundingClientRect();
+        const centerX = rect.width / 2;
+        const centerY = rect.height / 2;
+        
+        const rotateX = (centerY - (e.clientY - rect.top)) / 15;
+        const rotateY = ((e.clientX - rect.left) - centerX) / 15;
+
+        card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale3d(1.02, 1.02, 1.02)`;
+    });
+
+    card.addEventListener('mouseleave', () => {
+        card.style.transform = `perspective(1000px) rotateX(0deg) rotateY(0deg) scale3d(1, 1, 1)`;
+    });
+});
+
+// 3. INTEGRATION: Draw the Emitter Particles (Add this inside your animate() loop in particles.js)
+// Assuming particles.js animate function looks something like this:
+/*
+function animate() {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    // ... draw normal background particles ...
+    
+    // --> ADD THIS BLOCK HERE <--
+    updateAndDrawEmitterParticles();
+    // ---------------------------
+
+    requestAnimationFrame(animate);
+}
+*/
+
+function updateAndDrawEmitterParticles() {
+    for (let i = 0; i < emitterParticles.length; i++) {
+        const p = emitterParticles[i];
+        
+        p.x += p.speedX;
+        p.y += p.speedY; // Floating UP
+        p.opacity -= 0.01; // Fade out
+        p.life--;
+
+        // Draw the specialized particle
+        ctx.fillStyle = `rgba(255, 255, 255, ${p.opacity})`;
+        ctx.beginPath();
+        ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
+        ctx.fill();
+
+        // Remove dead particles from the array
+        if (p.opacity <= 0 || p.life <= 0) {
+            emitterParticles.splice(i, 1);
+            i--; // Adjust index
+        }
+    }
+                                                }
